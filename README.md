@@ -13,8 +13,6 @@ En esta sección hablaremos de los aspectos generales del curso
     - Conocimientos en Control de Código Fuente
     - Conocimiento en Metodologías de desarrollo de software
 
-![Deimer trabajo.jpg](1%20Presentacio%CC%81n%20del%20curso%205ff0f1b1b4b44ca8bbafd7217831c513/Deimer_trabajo.jpg)
-
 ## ¿Qué temas aprenderemos?
 
 - Nivel 1

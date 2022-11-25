@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+       <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <title>
+            Etiquetas HTML
+        </title>
+        <link />
+    </head>
+    <body>
+        <div id="contenedor">
+            <nav>
+                <ul>
+                   <li><a href="http://siempre.net.co"  target="_blank"> SIEMPRE.NET</a></li>
+                   <li><a href="#" data-href="/page/contenido.html" onclick="changePage(event)">  Contenido</a></li>
+                   <li><a href="#" data-href="/page/formulario.html" onclick="changePage(event)"> Tablas</a></li>
+                   <li>Formulario</li>
+                   <li>Img y Video</li> 
+                </ul>
+            </nav>
+            <main id="main">
+                
+            </main>
+
+        </div>
+
+        
+       <script type="text/javascript">
+         function changePage(e){
+            e.preventDefault();
+            var link =  e.target;
+            var main = document.getElementById("main");
+
+            var iframeCreated =  document.getElementById("randomid");
+
+                if (iframeCreated !== null){
+                    main.removeChild(iframeCreated);
+                }
+
+                var iframe = document.createElement('iframe');
+                iframe.frameBorder=0;
+                iframe.style="height: 500px; width:100%;";
+                iframe.id="randomid";
+                iframe.setAttribute("src", link.dataset.href);
+                main.appendChild(iframe);     
+         }
+       </script>
+    </body>
+</html>

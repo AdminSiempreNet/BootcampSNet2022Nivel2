@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-       <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-        <title>
-            Etiquetas HTML
-        </title>
-        <link />
-    </head>
-    <body>
-        <div id="contenedor">
-            <nav>
-                <ul>
-                   <li><a href="http://siempre.net.co"  target="_blank"> SIEMPRE.NET</a></li>
-                   <li><a href="#" data-href="/page/contenido.html" onclick="changePage(event)">  Contenido</a></li>
-                   <li><a href="#" data-href="/page/formulario.html" onclick="changePage(event)"> Tablas</a></li>
-                   <li>Formulario</li>
-                   <li>Img y Video</li> 
-                </ul>
-            </nav>
-            <main id="main">
-                
-            </main>
 
-        </div>
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>
+        Etiquetas HTML
+    </title>  
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./css/style.css" />   
+</head>
 
+<body>
+    <div id="contenedor">
+        <nav class="menu">
+            <ul>
+                <li><a href="http://siempre.net.co" target="_blank"> SIEMPRE.NET</a></li>
+                <li><a href="#" data-href="/page/contenido.html" onclick="changePage(event)"> Contenido</a></li>
+                <li><a href="#" data-href="/page/tablas.html" onclick="changePage(event)"> Tablas</a></li>
+                <li><a href="#" data-href="/page/formulario.html" onclick="changePage(event)"> Formulario</a></li>
+                <li><a href="#" data-href="/page/img-video.html" onclick="changePage(event)"> Img y Video</a></li>
+                <li><a href="#" data-href="/page/display.html" onclick="changePage(event)"> display</a></li>
+            </ul>
+        </nav>
         
-       <script type="text/javascript">
-         function changePage(e){
+  
+       </div>
+      
+        <div id="main">
+                <iframe id="randomid" src="/page/tablas.html" style="height: 1000px; width:100%;"></iframe>
+            </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+
+        function changePage(e) {
             e.preventDefault();
-            var link =  e.target;
+            var link = e.target;
             var main = document.getElementById("main");
 
-            var iframeCreated =  document.getElementById("randomid");
+            var iframeCreated = document.getElementById("randomid");
 
-                if (iframeCreated !== null){
-                    main.removeChild(iframeCreated);
-                }
+            if (iframeCreated !== null) {
+                main.removeChild(iframeCreated);
+            }
 
-                var iframe = document.createElement('iframe');
-                iframe.frameBorder=0;
-                iframe.style="height: 500px; width:100%;";
-                iframe.id="randomid";
-                iframe.setAttribute("src", link.dataset.href);
-                main.appendChild(iframe);     
-         }
-       </script>
-    </body>
+            var iframe = document.createElement('iframe');
+            iframe.frameBorder = 0;
+            iframe.style = "height: 1000px; width:100%;";
+            iframe.id = "randomid";
+            iframe.setAttribute("src", link.dataset.href);
+            main.appendChild(iframe);
+        }
+    </script>
+</body>
+
 </html>
